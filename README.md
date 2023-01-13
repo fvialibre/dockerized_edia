@@ -87,5 +87,5 @@ Before execute `./run_image.sh`, you can configure the tool through `host_config
 ```
 
 ## License Information 
-This project is under a [MIT license](LICENSE).
+This project is under a [MIT license](https://github.com/fvialibre/edia_dockerizable/blob/main/app/LICENSE).
 
