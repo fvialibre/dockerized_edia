@@ -1,0 +1,17 @@
+gradio==3.12
+# 
+regex
+wordcloud
+matplotlib
+datasets
+memory_profiler
+seaborn
+# 
+scikit-learn
+python-dotenv
+torch
+transformers
+numpy
+uuid
+gensim==4.2.0
+annoy

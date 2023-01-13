@@ -1,0 +1,6 @@
+Dockerfile
+notebook/
+.gitignore
+README.md
+__pycache__/
+logs/
