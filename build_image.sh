@@ -1,6 +1,6 @@
 #!/bin/bash
 # HOW TO USE
-#   ./build_image.sh <image_name>
+#   ./build_image.sh <docker_image_name>
 
 IMAGE_NAME=$1
 APP_PATH=$(pwd)/app
@@ -10,7 +10,7 @@ then
     echo "Error: You must insert an <image_name> to generate the docker image, as the first command line parameter!
 
     USE:
-    $ ./build_image.sh <image_name>
+    $ ./build_image.sh <docker_image_name>
     "
 
     exit 1

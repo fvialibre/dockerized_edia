@@ -78,8 +78,4 @@ sudo docker create \
 echo "* Initializing container ..."
 sudo docker start $CONTAINER_NAME > /dev/null 2>&1
 
-echo "The container has been created successfully and will be available in a few minutes at http://localhost:$HOST_PORT
-    - $ sudo docker stop <container_name> to stop EDIA tool.
-    - $ sudo docker restart <container_name> to run again EDIA tool.
-    - $ sudo docker rm <container_name> to remove permanently EDIA tool container. After this, you need create again the container  through ./run_image.sh script.
-"
+echo "The container has been created successfully. The tool will be available in a few minutes at http://localhost:$HOST_PORT"
