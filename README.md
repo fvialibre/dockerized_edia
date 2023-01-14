@@ -13,34 +13,37 @@ You can test and explore this functions with our live demo hosted on HuggingFace
 * Prerequisites: Have [DockerEngine](https://docs.docker.com/engine/install) installed on your OS.
 
 ```sh
-# Clone repo
+# --- Clone this repo ---
 $ git clone https://github.com/fvialibre/edia_dockerizable.git && cd edia_dockerizable 
 
-# Give execute permissions to .sh files.
+# --- Give execute permissions to .sh files. ---
 $ sudo chmod +x setup.sh build_image.sh run_image.sh
 
-# Set up work environment. This will create the necessary folders and download the data files to be able to generate the docker image.
+# --- Set up work environment ---
+# This will create the necessary folders and download the data files to be able to generate the docker image.
 $ ./setup.sh
 
-# Option A: Create a new Docker Image from app
+# --- Build the docker image ---
+## Option A: Via local app/
 $ ./build_image.sh <docker_image_name>
 
-# Option B: Download the  latest EDIA image from Docker Hub (coming soon)
-$ sudo docker pull <dockerhub_user>/edia:latest
+## Option B: Downloading the latest image from Docker Hub (coming soon)
+$ sudo docker pull <vialibre_user>/edia:latest
 
-# Run Docker Image. Create a new container <container_name> and run it. The EDIA tool will be available at the address http://localhost:<host_port>
+# --- Run the docker image --- 
+# Create a new <container_name> and run it. The EDIA tool will be available at the address http://localhost:<host_port> in few minutes.
 $ ./run_image.sh <docker_image_name> <container_name> <host_port>
 ```
 
 ### Stop/Start/Remove EDIA tool
 ```sh
-# Stop EDIA tool (stop container <container_name>)
+# --- Stop EDIA tool (stop container <container_name>) ---
 $ sudo docker stop <container_name>
 
-# Start/Restart EDIA tool (start/restar container <container_name>)
+# --- Start/Restart EDIA tool (start/restar container <container_name>) ---
 $ sudo docker start/restart <container_name>
 
-# Remove permanently EDIA tool (remove container <container_name>)
+# --- Remove EDIA tool from local (remove container <container_name>) ---
 $ sudo docker rm <container_name>
 ```
 
@@ -51,7 +54,7 @@ $ sudo docker rmi <docker_image_name>
 
 ## Tool Configuration
 
-Before execute `./run_image.sh`, you can configure the tool through `host_config/tool.cfg` file. This contains the below configuration parameters for the tool:
+Before execute `./run_image.sh`, you can configure the tool through `host_config/tool.cfg` file. This contains the below configuration parameters:
 
 | **Name** | **Options** | **Description** |
 |---|---|---|

@@ -7,7 +7,7 @@ APP_PATH=$(pwd)/app
 
 if [[ $IMAGE_NAME == "" ]];
 then
-    echo "Error: You must insert an <image_name> to generate the docker image, as the first command line parameter!
+    echo "Error: You must insert an <docker_image_name> to generate the docker image, as the first command line parameter!
 
     USE:
     $ ./build_image.sh <docker_image_name>

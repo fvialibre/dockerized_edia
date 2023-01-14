@@ -1,13 +1,12 @@
 # !/bin/bash
 # HOW TO USE:
-# $ ./setup.sh
+#	$ ./setup.sh
 
 WORKDIR=$(pwd)
 HOST_CONFIG_DIR="host_config"
 HOST_LOGS_DIR="host_logs"
 HOST_DATA_DIR="host_data"
 EDIA_DATA_DIR="$WORKDIR/app/data"
-
 TOOL_CONFIG_FILE="tool.cfg"
 TOOL_CONFIG_CONTENT="
 [INTERFACE]\n\
