@@ -59,7 +59,7 @@ Before execute `./run_image.sh`, you can configure the tool through `host_config
 | **Name** | **Options** | **Description** |
 |---|---|---|
 | language | `es`, `en` | Changes the interface language |
-| embeddings_path | `your_embedding_file.vec` | Path to word embeddings to use. You can use your own embedding file as long as it is in `.vec` format. If it's a `.bin` extended file, only gensims c binary format are valid. if this field is left empty, the tool will use two default embedding files according to the configured language. |
+| embeddings_path | `your_embedding_file.vec` | Path to word embeddings to use. You can use your own embedding file as long as it is in `.vec` format, and host it the `host_data/` directory created automatically when you run `./setup.sh`. If it's a `.bin` extended file, only gensims c binary format are valid. if this field is left empty, the tool will use two default embedding files according to the configured language. |
 | nn_method | `sklearn`, `ann` | Method used to fetch nearest neighbors. Sklearn uses [sklearn nearest neighbors](https://scikit-learn.org/stable/modules/neighbors.html) exact calculation so your embedding must fit in your computer's memory, it's a slower approach for large embeddings. [Ann](https://pypi.org/project/annoy/1.0.3/) is a approximate nearest neighbors search suitable for large embeddings that don't fit in memory |
 | max_neighbors | (int) `20` | Select amount of neighbors to fit sklearn nearest neighbors method. |
 | vocabulary_subset | `mini`, `full` | Vocabulary necessary for context search tool |
