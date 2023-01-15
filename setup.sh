@@ -1,6 +1,6 @@
 # !/bin/bash
 # HOW TO USE:
-#	$ ./setup.sh
+#   $ ./setup.sh
 
 WORKDIR=$(pwd)
 HOST_CONFIG_DIR="host_config"

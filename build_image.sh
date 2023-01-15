@@ -20,7 +20,7 @@ echo "* Checking existence of '$IMAGE_NAME' docker image ..."
 if [[ "$(sudo docker images -q $IMAGE_NAME 2> /dev/null)" == "" ]]; 
 then
     sudo docker build -t $IMAGE_NAME -f $APP_PATH/Dockerfile $APP_PATH
-    echo "Image '$IMAGE_NAME' successfully created!"
+    echo "* Image '$IMAGE_NAME' successfully created!"
 else
-    echo "The image '$IMAGE_NAME' already exists!"
+    echo "Info: The image '$IMAGE_NAME' already exists!"
 fi

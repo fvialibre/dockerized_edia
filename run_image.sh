@@ -8,7 +8,7 @@ HOST_PORT=$3
 
 WORKDIR=$(pwd)
 DEFAUL_HOST_PORT="9090"
-LATEST_EDIA_DOCKER_IMAGE="nanomdk/edia:latest"
+LATEST_EDIA_DOCKER_IMAGE="comin soon/edia:latest"
 HOST_CONFIG_DIR="host_config"
 HOST_LOGS_DIR="host_logs"
 HOST_DATA_DIR="host_data"
@@ -36,7 +36,7 @@ fi
 
 if [[ $HOST_PORT == "" ]];
 then
-    echo "* Seting '$DEFAUL_HOST_PORT' as default <host_port>!"
+    echo "* Setting '$DEFAUL_HOST_PORT' as default <host_port> ..."
     HOST_PORT=$DEFAUL_HOST_PORT
 fi
 
@@ -47,14 +47,14 @@ then
     echo "Error: The '$IMAGE_NAME' image does'n exists!. 
     
     - Build your own image running:
-        $ ./build_image.sh <image_name> <app_path>
+        $ ./build_image.sh <docker_image_name>
     - Or download the latest EDIA image from docker hub: 
         $ sudo docker pull $LATEST_EDIA_DOCKER_IMAGE
     "
     exit 1
 fi
 
-echo "* Stoping and removing any container called '$CONTAINER_NAME' ..."
+echo "* Stopping and removing any other container named '$CONTAINER_NAME' ..."
 sudo docker stop $CONTAINER_NAME > /dev/null 2>&1
 sudo docker rm $CONTAINER_NAME > /dev/null 2>&1
 
