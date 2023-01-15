@@ -8,7 +8,8 @@ class RankSents:
     def __init__(
         self, 
         language_model, # LanguageModel class instance
-        lang: str
+        lang: str,
+        errorManager    # ErrorManager class instance
     ) -> None:
         
         self.tokenizer = language_model.initTokenizer()
@@ -43,6 +44,8 @@ class RankSents:
                 'and', 'or', 'but', 'that', 'if', 'whether'
             ]
 
+        self.errorManager = errorManager
+
     def errorChecking(
         self, 
         sent: str
@@ -50,18 +53,18 @@ class RankSents:
 
         out_msj = ""
         if not sent:
-            out_msj = "Error: You most enter a sentence!"
+            out_msj = ['RANKSENTS_NO_SENTENCE_PROVIDED']
         elif sent.count("*") > 1:
-            out_msj= " Error: The sentence entered must contain only one ' * '!"
+            out_msj = ['RANKSENTS_TOO_MANY_MASKS_IN_SENTENCE']
         elif sent.count("*") == 0:
-            out_msj= " Error: The entered sentence needs to contain a ' * ' in order to predict the word!"
+            out_msj = ['RANKSENTS_NO_MASK_IN_SENTENCE']
         else:
             sent_len = len(self.tokenizer.encode(sent.replace("*", self.tokenizer.mask_token)))
             max_len = self.tokenizer.max_len_single_sentence
             if sent_len > max_len:
-                out_msj = f"Error: The sentence has more than {max_len} tokens!"
+                out_msj = ['RANKSENTS_TOKENIZER_MAX_TOKENS_REACHED', max_len]
         
-        return out_msj
+        return self.errorManager.process(out_msj)
 
     def getTop5Predictions(
         self, 

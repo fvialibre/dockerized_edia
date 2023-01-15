@@ -4,7 +4,7 @@ TOOL_INFO = """
 * [Read Full Paper](https://arxiv.org/abs/2207.06591)
 
 > ### Licensing Information 
-* [MIT Licence](https://github.com/fvialibre/edia/blob/master/LICENSE)
+* [MIT Licence](https://github.com/fvialibre/dockerized_edia/blob/main/LICENSE)
 
 > ### Citation Information
 ```c

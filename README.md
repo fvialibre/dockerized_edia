@@ -1,4 +1,4 @@
-# EDIA: Stereotypes and Discrimination in Artificial Intelligence (Dockerizable version)
+# EDIA: Stereotypes and Discrimination in Artificial Intelligence
 [[Paper]](https://arxiv.org/abs/2207.06591) [[HuggingFace🤗 Demo]](https://huggingface.co/spaces/vialibre/edia) 
 
 Language models and word representations obtained with machine learning contain discriminatory stereotypes. Here we present the EDIA project (Stereotypes and Discrimination in Artificial Intelligence). This project aimed to design and evaluate a methodology that allows social scientists and domain experts in Latin America to explore biases and discriminatory stereotypes present in word embeddings (WE) and language models (LM). It also allowed them to define the type of bias to explore and do an intersectional analysis using two binary dimensions (for example, female-male intersected with fat-skinny).
@@ -14,7 +14,7 @@ You can test and explore this functions with our live demo hosted on HuggingFace
 
 ```sh
 # --- Clone this repo ---
-$ git clone https://github.com/fvialibre/edia_dockerizable.git && cd edia_dockerizable 
+$ git clone https://github.com/fvialibre/dockerized_edia.git && cd dockerized_edia 
 
 # --- Give execute permissions to .sh files. ---
 $ sudo chmod +x setup.sh build_image.sh run_image.sh

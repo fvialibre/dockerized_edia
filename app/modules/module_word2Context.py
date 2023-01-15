@@ -13,8 +13,9 @@ import matplotlib.pyplot as plt
 class Word2Context:
     def __init__(
         self, 
-        context_ds_name: str, 
-        vocabulary  # Vocabulary class instance
+        context_ds_name: str,       # Context dataset HF name | path 
+        vocabulary,                 # Vocabulary class instance
+        errorManager                # ErrorManager class instance
     ) -> None:
 
         self.context_ds_name = context_ds_name
@@ -25,6 +26,8 @@ class Word2Context:
         # Custom Label component
         self.Label = CustomSubsetsLabel()
 
+        self.errorManager = errorManager
+
     def errorChecking(
         self, 
         word: str
@@ -33,12 +36,12 @@ class Word2Context:
         out_msj = ""
 
         if not word:
-            out_msj = "Error: Primero debe ingresar una palabra!"
+            out_msj = ['EMBEDDING_NO_WORD_PROVIDED']
         else:
             if word not in self.vocab:
-                out_msj = f"Error: La palabra '<b>{word}</b>' no se encuentra en el vocabulario!"
+                out_msj = ['EMBEDDING_WORD_OOV', word]
         
-        return out_msj
+        return self.errorManager.process(out_msj)
 
     def genWebLink(
         self,

@@ -27,10 +27,12 @@ class WordToPlot:
 class WordExplorer:
     def __init__(
         self,
-        embedding   # Embedding Class instance
+        embedding,      # Embedding Class instance
+        errorManager    # ErrorManager class instance
     ) -> None:
 
         self.embedding = embedding
+        self.errorManager = errorManager
 
     def __errorChecking(
         self,
@@ -40,12 +42,12 @@ class WordExplorer:
         out_msj = ""
 
         if not word:
-            out_msj = "Error: Primero debe ingresar una palabra!"
+            out_msj = ['EMBEDDING_NO_WORD_PROVIDED']
         else:
             if word not in self.embedding:
-                out_msj = f"Error: La palabra '<b>{word}</b>' no se encuentra en el vocabulario!"
+                out_msj = ['EMBEDDING_WORD_OOV', word]
 
-        return out_msj
+        return self.errorManager.process(out_msj)
 
     def check_oov(
         self, 
