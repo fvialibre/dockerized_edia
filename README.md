@@ -8,46 +8,49 @@ EDIA contains several functions that serve to detect and inspect biases in natur
 You can test and explore this functions with our live demo hosted on HuggingFace🤗 by clicking [here](https://huggingface.co/spaces/vialibre/edia).
 
 
-## Installation and Use
+## Setup and Use
 
-* Prerequisites: Have [DockerEngine](https://docs.docker.com/engine/install) installed on your OS.
+> Prerequisites: Have [DockerEngine](https://docs.docker.com/engine/install) installed on your OS.
 
 ```sh
-# --- Clone this repo ---
+# --- 1. Clone this repo ---
 $ git clone https://github.com/fvialibre/dockerized_edia.git && cd dockerized_edia 
 
-# --- Give execute permissions to .sh files. ---
+# --- 2. Give execute permissions to .sh files. ---
 $ sudo chmod +x setup.sh build_image.sh run_image.sh
 
-# --- Set up work environment ---
+# --- 3. Setup work environment ---
 # This will create the necessary folders and download the data files to be able to generate the docker image.
 $ ./setup.sh
 
-# --- Build the docker image ---
+# --- 4. Build the docker image ---
 ## Option A: Via local app/
 $ ./build_image.sh <docker_image_name>
 
 ## Option B: Downloading the latest image from Docker Hub (coming soon)
-$ sudo docker pull <vialibre_user>/edia:latest
+$ sudo docker pull fvialibre/edia:latest
 
-# --- Run the docker image --- 
+# --- 5. Run the docker image --- 
 # Create a new <container_name> and run it. The EDIA tool will be available at the address http://localhost:<host_port> in few minutes.
 $ ./run_image.sh <docker_image_name> <container_name> <host_port>
 ```
 
-### Stop/Start/Remove EDIA tool
+### How to stop/delete and restart the created <container_name>
 ```sh
-# --- Stop EDIA tool (stop container <container_name>) ---
+# ---  Stop the <container_name> container ---
+# (Stop EDIA tool)
 $ sudo docker stop <container_name>
 
-# --- Start/Restart EDIA tool (start/restar container <container_name>) ---
+# --- Start/Restart the <container_name> container  ---
+# (Start/Restart EDIA tool)
 $ sudo docker start/restart <container_name>
 
-# --- Remove EDIA tool from local (remove container <container_name>) ---
+# --- Remove the <container_name> container  ---
+# (After this you need to run the ./run_image.sh command to use the EDIA tool again)
 $ sudo docker rm <container_name>
 ```
 
-### Remove local image from EDIA tool
+### Permanently remove the EDIA docker image from your local.
 ```sh 
 $ sudo docker rmi <docker_image_name>
 ```

@@ -8,7 +8,7 @@ HOST_PORT=$3
 
 WORKDIR=$(pwd)
 DEFAUL_HOST_PORT="9090"
-LATEST_EDIA_DOCKER_IMAGE="comin soon/edia:latest"
+LATEST_EDIA_DOCKER_IMAGE="fvialibre/edia:latest"
 HOST_CONFIG_DIR="host_config"
 HOST_LOGS_DIR="host_logs"
 HOST_DATA_DIR="host_data"
