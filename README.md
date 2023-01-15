@@ -12,7 +12,7 @@ You can test and explore this functions with our live demo hosted on HuggingFace
 
 ## Setup and Use
 
-> Prerequisites: Have [DockerEngine](https://docs.docker.com/engine/install) installed on your OS.
+> Prerequisites: -Linux OS. -Have [DockerEngine](https://docs.docker.com/engine/install) installed. -At least 12 Gb of RAM (final generated container uses ~9.78 Gb).
 
 ```sh
 # --- 1. Clone this repo ---
@@ -52,7 +52,7 @@ $ sudo docker start/restart <container_name>
 $ sudo docker rm <container_name>
 ```
 
-### Permanently remove the EDIA docker image from your local.
+### Permanently remove the EDIA docker image from your local
 ```sh 
 $ sudo docker rmi <docker_image_name>
 ```
