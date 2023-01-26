@@ -29,8 +29,8 @@ $ ./setup.sh
 ## Option A: Via local app/
 $ ./build_image.sh <docker_image_name>
 
-## Option B: Downloading the latest image from Docker Hub (coming soon)
-$ sudo docker pull fvialibre/edia:latest
+## Option B: Downloading the latest image from Docker Hub
+$ sudo docker pull fvialibre/edia:tool
 
 # --- 5. Run the docker image --- 
 # Create a new <container_name> and run it. The EDIA tool will be available at the address http://localhost:<host_port> in few minutes.
@@ -79,6 +79,7 @@ Before execute `./run_image.sh`, you can configure the tool through `host_config
 * Data explorer: [[video]]() [manual: [es](https://shorturl.at/CIVY6) | en]
 * Crows-Pairs: [[video]]() [manual: [es](https://shorturl.at/gJLTU) | en]
 
+
 ## Citation Information
 ```c
 @misc{https://doi.org/10.48550/arxiv.2207.06591,
@@ -96,4 +97,3 @@ Before execute `./run_image.sh`, you can configure the tool through `host_config
 
 ## License Information 
 This project is under a [MIT license](LICENSE).
-

@@ -8,7 +8,7 @@ HOST_PORT=$3
 
 WORKDIR=$(pwd)
 DEFAUL_HOST_PORT="9090"
-LATEST_EDIA_DOCKER_IMAGE="fvialibre/edia:latest"
+LATEST_EDIA_DOCKER_IMAGE="fvialibre/edia:tool"
 HOST_CONFIG_DIR="host_config"
 HOST_LOGS_DIR="host_logs"
 HOST_DATA_DIR="host_data"
@@ -55,7 +55,7 @@ then
 fi
 
 echo "* Stopping and removing any other container named '$CONTAINER_NAME' ..."
-sudo docker stop $CONTAINER_NAME > /dev/null 2>&1
+sudo docker kill $CONTAINER_NAME > /dev/null 2>&1
 sudo docker rm $CONTAINER_NAME > /dev/null 2>&1
 
 echo "* Checking existence of necessary directories ..."

@@ -50,8 +50,12 @@ then
 fi
 
 
-echo "* Creating app/data/ diretory ..."
-mkdir $EDIA_DATA_DIR
+if [ ! -d $EDIA_DATA_DIR ]; 
+then 
+    echo "* Creating '$EDIA_DATA_DIR' directory ..."
+    mkdir $EDIA_DATA_DIR
+fi
+
 
 echo "* Download data files ..."
 ID="1uI6HsBw1XWVvTEIs9goSpUVfeVJe-zEP"
