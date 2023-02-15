@@ -111,7 +111,7 @@ class WordExplorerConnector(Connector):
         ]
         
         if embedding is None:
-            raise KeyError
+            raise KeyError('embedding')
         
         self.word_explorer = WordExplorer(
             embedding=embedding,
@@ -204,7 +204,7 @@ class BiasWordExplorerConnector(Connector):
         ]
 
         if embedding is None:
-            raise KeyError
+            raise KeyError('embedding')
 
         self.bias_word_explorer_2_spaces = WEBiasExplorer2Spaces(
             embedding=embedding,
@@ -322,8 +322,10 @@ class Word2ContextExplorerConnector(Connector):
             "subsets_choice"
         ]
 
-        if vocabulary is None or context is None:
-            raise KeyError
+        if vocabulary is None:
+            raise KeyError('vocabulary')
+        elif context is None:
+            raise KeyError('context')
 
         self.word2context_explorer = Word2Context(
             context,
@@ -409,8 +411,10 @@ class PhraseBiasExplorerConnector(Connector):
             "word_list"
         ]
 
-        if language_model is None or lang is None:
-            raise KeyError
+        if language_model is None:
+            raise KeyError('language_model')
+        elif lang is None:
+            raise KeyError('lang')
 
         self.phrase_bias_explorer = RankSents(
             language_model=language_model,
@@ -478,7 +482,7 @@ class CrowsPairsExplorerConnector(Connector):
         ]
 
         if language_model is None:
-            raise KeyError
+            raise KeyError('language_model')
         
         self.crows_pairs_explorer = CrowsPairs(
             language_model=language_model,

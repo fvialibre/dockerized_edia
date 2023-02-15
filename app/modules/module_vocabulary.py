@@ -1,3 +1,4 @@
+import os
 from memory_profiler import profile
 import pandas as pd
 from typing import List, Dict, Tuple
@@ -31,6 +32,9 @@ class Vocabulary:
     def __load(
         self
     ) -> None:
+
+        if not os.path.isfile(self.ds_path):
+            raise FileNotFoundError(self.ds_path)
 
         print(f"Preparing {self.subset_name} vocabulary...")
 

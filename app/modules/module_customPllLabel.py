@@ -109,4 +109,3 @@ class CustomPllLabel:
         ratios = self.__getProportions(scores)
         
         return self.__render(sents, scores, ratios)
-        return self.__render(sents, scores, ratios)

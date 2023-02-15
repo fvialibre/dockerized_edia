@@ -1,4 +1,5 @@
 # --- Imports libs ---
+import os
 import gradio as gr
 import pandas as pd
 import configparser
@@ -20,7 +21,7 @@ from interfaces.interface_crowsPairs import interface as interface_crowsPairs
 
 # --- Tool config ---
 cfg = configparser.ConfigParser()
-cfg.read('config/tool.cfg')
+cfg.read('../host_config/tool.cfg')
 
 LANGUAGE            = cfg['INTERFACE']['language']
 
@@ -52,7 +53,11 @@ vocabulary = Vocabulary(
 beto_lm = LanguageModel(
     model_name=LANGUAGE_MODEL
 )
-labels = pd.read_json(f"language/{LANGUAGE}.json")["app"]
+
+labels_path = f"language/{LANGUAGE}.json"
+if not os.path.isfile(labels_path):
+    raise FileNotFoundError(labels_path)
+labels = pd.read_json(labels_path)["app"]
 
 
 # --- Main App ---
