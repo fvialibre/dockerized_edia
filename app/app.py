@@ -21,7 +21,7 @@ from interfaces.interface_crowsPairs import interface as interface_crowsPairs
 
 # --- Tool config ---
 cfg = configparser.ConfigParser()
-cfg.read('../host_config/tool.cfg')
+cfg.read('config/tool.cfg')
 
 LANGUAGE            = cfg['INTERFACE']['language']
 
